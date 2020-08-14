@@ -1,0 +1,11 @@
+server:
+  port: 8082
+words: 一切反动派都是纸老虑！
+spring:
+  application:
+    name: testspringcloud-web
+  cloud:
+    nacos:
+      config:
+        file-extension: yml
+      server-addr: 127.0.0.1:8848
