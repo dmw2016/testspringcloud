@@ -38,6 +38,8 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-test</artifactId>
+            <!--springboot test (或者其他模块版本与spring cloud版本不兼容，单元测试时报错：
+            SpringApplication init 之类的错误。)-->
             <version>2.4.0-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
