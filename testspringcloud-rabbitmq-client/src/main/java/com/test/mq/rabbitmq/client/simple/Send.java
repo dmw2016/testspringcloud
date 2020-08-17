@@ -1,9 +1,11 @@
-package com.test.mq.rabbitmq.client;
+package com.test.mq.rabbitmq.client.simple;
 
 import com.rabbitmq.client.ConnectionFactory;
 import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.Channel;
 import com.rabbitmq.client.DeliverCallback;
+
+import java.util.concurrent.Exchanger;
 
 public class Send {
 
@@ -16,9 +18,11 @@ public class Send {
 
         try (Connection connection = factory.newConnection();
              Channel channel = connection.createChannel()) {
-
+            channel.exchangeDeclare("","");
             channel.queueDeclare("firstQueue", false, false, false, null);
             channel.queueBind("firstQueue", "firstExchange", "first.first");
+            Exchanger exchanger = new Exchanger();
+
             int i = 0;
             while (true) {
 

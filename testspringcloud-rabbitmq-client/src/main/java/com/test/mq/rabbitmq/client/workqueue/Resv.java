@@ -1,9 +1,8 @@
-package com.test.mq.rabbitmq.client;
+package com.test.mq.rabbitmq.client.workqueue;
 
-import com.rabbitmq.client.ConnectionFactory;
-import com.rabbitmq.client.Connection;
 import com.rabbitmq.client.Channel;
-import com.rabbitmq.client.DeliverCallback;
+import com.rabbitmq.client.Connection;
+import com.rabbitmq.client.ConnectionFactory;
 
 public class Resv {
 
@@ -13,13 +12,16 @@ public class Resv {
         ConnectionFactory factory = new ConnectionFactory();
         factory.setHost("localhost");
         Connection connection = factory.newConnection();
+
         Channel channel = connection.createChannel();
         channel.queueDeclare(QUEUE_NAME, false, false, false, null);
+
         System.out.println(" [x] Waiting for message .To exit press CTRL+C");
-        DeliverCallback deliverCallback = ((consumerTag, message) -> {
-            System.out.println(" [x] Received '" + new String(message.getBody(),"UTF-8") + "'");
-        });
-        channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> { });
+//        DeliverCallback deliverCallback = ((consumerTag, message) -> {
+//            System.out.println(" [x] Received '" + new String(message.getBody(),"UTF-8") + "'");
+//        });
+//
+//        channel.basicConsume(QUEUE_NAME, true, deliverCallback, consumerTag -> {});
 
     }
 }
