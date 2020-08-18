@@ -7,6 +7,8 @@
         <module>testspringcloud-web</module>
         <module>testspringcloud-rabbitmq-client</module>
         <module>testspringcloud-zipkin-sleuth</module>
+        <module>testspringcloud-eureka-server</module>
+        <module>testspringcloud-ribbon-consumer</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -43,10 +45,10 @@
             <version>2.4.0-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-actuator</artifactId>-->
+<!--        </dependency>-->
 
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.cloud</groupId>-->
