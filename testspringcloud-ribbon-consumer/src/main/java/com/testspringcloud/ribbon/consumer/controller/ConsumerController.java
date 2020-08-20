@@ -1,19 +1,26 @@
 package com.testspringcloud.ribbon.consumer.controller;
 
+import com.testspringcloud.ribbon.consumer.service.HelloService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
+
+import java.util.Random;
 
 @RestController
 public class ConsumerController {
-    @Autowired
-    RestTemplate restTemplate;
 
+    private static Logger logger = LoggerFactory.getLogger(ConsumerController.class);
+
+    @Autowired
+    HelloService service;
     @RequestMapping(value = "/ribbon-consumer",method = RequestMethod.GET)
-    public String helloConsumer(){
-        return restTemplate.getForEntity("http://TESTSPRINGCLOUD-WEB/hello/sayHello",String.class).getBody();
+    public String helloConsumer() throws Exception{
+
+        return service.helloConsumer();
     }
 
 }
