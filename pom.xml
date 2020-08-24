@@ -10,6 +10,10 @@
         <module>testspringcloud-eureka-server</module>
         <module>testspringcloud-ribbon-consumer</module>
         <module>testspringcloud-feign-consumer</module>
+        <module>testspringcloud-api-gateway</module>
+        <module>testspringcloud-config-server</module>
+        <module>testspringcloud-config-client</module>
+        <module>testspringcloud-designpattern</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -46,12 +50,17 @@
             <version>2.4.0-SNAPSHOT</version>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-sleuth -->
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-sleuth</artifactId>
-            <version>2.2.4.RELEASE</version>
-        </dependency>
+
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-starter-sleuth</artifactId>-->
+<!--            <version>2.2.4.RELEASE</version>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.cloud</groupId>-->
+<!--            <artifactId>spring-cloud-sleuth-zipkin</artifactId>-->
+<!--            <version>2.2.4.RELEASE</version>-->
+<!--        </dependency>-->
 
         <!--        <dependency>-->
 <!--            <groupId>org.springframework.boot</groupId>-->
