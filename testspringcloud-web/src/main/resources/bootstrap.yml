@@ -1,6 +1,6 @@
 spring:
   application:
-    name: testspringcloud-web
+    name: testspringcloud-web-v1
   # sleuth 配置
   sleuth:
     web:

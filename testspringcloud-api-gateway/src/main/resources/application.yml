@@ -4,16 +4,25 @@ spring:
 server:
   port: 5000
 zuul:
-  routes:
-    api-a-url:
-      path: /api-a-url/**
-      url: http://localhost:8080/
-    api-a:
-      path: /api-a/**
-      serviceId: testspringcloud-web
-    api-b:
-      path: /api-b/**
-      serviceId: feign-consumer
+# yaml文件里面 * 号要加''(引号)，不然报错
+#  ignored-services: '*'
+#  routes:
+# 单实例配置
+#    api-a:
+#      path: /api-a/**
+#      url: http://localhost:8081/
+#    testspringcloud-web: /api-a/**
+
+#    api-a:
+#      path: /api-a/**
+#      serviceId: testspringcloud-web
+#    api-b:
+#      path: /api-b/**
+#      serviceId: feign-consumer
+#    api-c:
+#      path: /api-c/**
+#      serviceId: springcloud-api-gateway
+
 eureka:
   client:
     serviceUrl:

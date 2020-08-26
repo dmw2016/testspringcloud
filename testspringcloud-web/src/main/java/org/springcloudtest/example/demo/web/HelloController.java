@@ -13,7 +13,7 @@ import java.util.Random;
 @RequestMapping("hello")
 public class HelloController{
     private static Logger logger = LoggerFactory.getLogger(HelloController.class);
-    @Value("${words:'abc'}")
+    @Value("${words:abc}")
     private String words;
 
     @RequestMapping(value = "/sayHello",method = RequestMethod.GET,
